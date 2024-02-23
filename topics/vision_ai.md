@@ -37,6 +37,23 @@
 - **Transfer Learning**: A significant use case for pretrained models is transfer learning, where a model trained on one task is fine-tuned for another, related task. This approach allows for leveraging the knowledge gained from large, diverse datasets, even when the target task has limited data available.
 - **Feature Extraction**: Pretrained models are also used as feature extractors. In this scenario, the output of one of the intermediate layers of the model is used as a compact representation of the input image. These features can then be used for various tasks, such as similarity search or clustering.
 
+
+
+
+
+## MODELS
+
+### STABLE DIFFUSION
+What’s the advantage of Stable Diffusion? There are similar text-to-image generation services like DALLE and MidJourney. Why Stable Diffusion? The advantages of Stable Diffusion AI are:
+- Open-source: Many enthusiasts have created free tools and models.
+- Designed for low-power computers: It’s free or cheap to run.
+
+
+[Stable Diffusion Models: a beginner’s guide](https://stable-diffusion-art.com/models/) (jest info jak działać w AUTOMATIC1111 GUI)
+
+TODO: sprawdz najlepsze modele runwayml, openai, stabilityai, Salesforce, google, facebook
+
+### top huggingface
 - https://huggingface.co/runwayml/stable-diffusion-v1-5  10300
 - https://huggingface.co/CompVis/stable-diffusion-v1-4    6210
 - https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0 4510
@@ -46,6 +63,7 @@
 - https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0  1360
 - https://huggingface.co/openai/clip-vit-large-patch14    932
 - https://huggingface.co/timbrooks/instruct-pix2pix   786
+- https://huggingface.co/stablediffusionapi/deliberate-v2   707
 - https://huggingface.co/Salesforce/blip-image-captioning-large   706
 - https://huggingface.co/nlpconnect/vit-gpt2-image-captioning 683
 - https://huggingface.co/briaai/RMBG-1.4  601
@@ -59,6 +77,12 @@
 - https://huggingface.co/Salesforce/blip-image-captioning-base    337
 - https://huggingface.co/lambdalabs/sd-image-variations-diffusers 330
 - https://huggingface.co/laion/CLIP-ViT-H-14-laion2B-s32B-b79K    239
+- https://huggingface.co/acheong08/f222 185
+
+
+
+
+
 
 
 ## SYNTHETIC DATASETS
