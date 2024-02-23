@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>notes.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="bycie-architektem-rozwi%C4%85za%C5%84-ai">bycie architektem rozwiązań AI</h1>
+<h1 id="w-llm-chodzi-o-to-zeby-polaczyc-finetune--zarz%C4%85dzanie-rozmow%C4%85">W LLM chodzi o to zeby polaczyc FineTune + zarządzanie rozmową</h1>
+<h1 id="todo">TODO</h1>
+<pre><code>- finetuning lora itd
+- Reinforcment Learning / przeciwdziałanie halucyjnacjom
+- trendy
+- model garden
+
+- diffusion
+- transformers api na hugginface
+</code></pre>
+<ul>
+<li>ucze sie szybko nowych frameworkow</li>
+<li>to jak ja w tym ccc stawiałem te pytorcze i odkładałem modele na produkcji</li>
+<li>reko: scigalem sie z synerise i top</li>
+<li>robie finetuning dla corporate affairs (to serwuje na Vertex)</li>
+<li>w domu bawie sie llm studio, autogen</li>
+</ul>
+<h1 id="wazne">wazne</h1>
+<p><a href="https://www.youtube.com/@ShawhinTalebi">@ShawhinTalebi -YT</a></p>
+<p><a href="https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard">Chatbot Arena</a></p>
+<p><a href="https://gptranked.com/">https://gptranked.com/</a></p>
+<h1 id="neural-networks">neural networks:</h1>
+<ul>
+<li><strong>Input Layer</strong>: Data is fed into the neural network through the input layer. Each neuron in this layer represents a feature of the input data.</li>
+<li><strong>Hidden Layers</strong>: After the input layer, there are one or more hidden layers, which are where the computation is done. Each layer consists of units (neurons) that transform the - input data into something that the output layer can use.</li>
+<li><strong>Weights and Biases</strong>: Neurons in successive layers are connected through weights. These weights are parameters that the network learns during training. Each neuron also has a bias, allowing the model to fit the training data better.</li>
+<li><strong>Activation Function</strong>: Each neuron in the hidden layers processes the inputs by performing a weighted sum (dot product of inputs and weights, plus a bias) and then applies an activation function. The activation function introduces non-linear properties to the network, allowing it to learn more complex tasks.</li>
+<li><strong>Output Layer</strong>: The final layer is the output layer. It brings together the computations and transformations from the hidden layers to form the output, depending on the task (e.g., classification, regression).</li>
+</ul>
+<h2 id="learning-process-training">Learning Process (Training):</h2>
+<ul>
+<li><strong>Forward Propagation</strong>: The data flows from the input layer through the hidden layers to the output layer. This process provides the initial output for the training data.</li>
+<li><strong>Loss Function</strong>: The network's prediction is compared to the actual target values, and the difference is calculated using a loss function. This function quantifies how far off the predictions are.</li>
+<li><strong>Backpropagation</strong>: This process involves going back through the network and adjusting the weights and biases to minimize the loss function. It's based on the gradient descent optimization algorithm, where the gradient of the loss function with respect to each weight is computed, and the weights are updated in the direction that reduces the loss.</li>
+<li><strong>Epochs</strong>: The process of feeding the network with the entire dataset and updating each weight is called an epoch. The network typically needs many epochs to learn the patterns in the data effectively.</li>
+</ul>
+<p><strong>Compute the gradient</strong>:
+grad = (2 / 3) * X.T @ (X @ w - y)
+w: input matrix
+y: actual output
+2: derivative of the squared term in the cost function
+<strong>Update weights</strong>
+w_new = w - alpha * grad</p>
+<h2 id="weights-and-biases">Weights and biases</h2>
+<p><strong>Weights Initialization</strong>:
+Initializing weights to zero: This is not advisable because if every neuron in the hidden layer starts with the same weight, they will all follow the same gradient and learn the same features during training, which is not useful. This problem is known as the &quot;symmetry breaking problem&quot;.
+Random Initialization: Weights are usually initialized randomly. This breaks the symmetry and allows the neurons to learn different things. The random values are typically small, often drawn from a normal (Gaussian) distribution with a mean of 0 and a small standard deviation, or a uniform distribution within a small range around zero. This helps in starting the optimization in a random position, which is crucial for the model to learn diverse patterns during training.</p>
+<p><strong>Bias Initialization</strong>:</p>
+<ul>
+<li>
+<p>Biases can be initialized to zero. Unlike weights, initializing biases to zero is not problematic. The asymmetry breaking comes from the random initialization of weights.</p>
+</li>
+<li>
+<p>However, sometimes biases are also initialized with small random values, depending on the specific activation function used in the neurons or specific practices in certain model architectures.</p>
+</li>
+<li>
+<p>In specific data science projects, the initialization of weights and biases can be influenced by the architecture of the model, the type of problem (classification, regression, etc.), and the activation functions used. Here are some common practices:</p>
+<ul>
+<li>Deep Learning / Neural Networks: Advanced techniques like Glorot initialization (also known as Xavier initialization) or He initialization are used, especially for deep networks, to keep the scale of gradients roughly the same in all layers.</li>
+<li>Convolutional Neural Networks (CNNs): Similar principles apply, but due to the structure of convolutional layers, specific patterns like He initialization or LeCun initialization are often used.</li>
+<li>Recurrent Neural Networks (RNNs): These might require even more careful initialization to prevent issues with vanishing or exploding gradients, often initializing weights in a certain way to maintain the scale of gradients and the scale of the state through time.</li>
+</ul>
+</li>
+</ul>
+<h2 id="learning-rate-optimization">learning rate optimization</h2>
+<h3 id="learning-rate-schedules">Learning Rate Schedules:</h3>
+<ul>
+<li><strong>Stochastic gradient descent</strong>: learning in batches</li>
+<li><strong>Time-based decay</strong>: Gradually reduce the learning rate over time. For example, you might decrease the learning rate by a factor every few epochs.</li>
+<li><strong>Step decay</strong>: Reduce the learning rate by a factor after a specific number of epochs. For instance, halve the learning rate every 5 epochs.</li>
+<li><strong>Exponential decay</strong>: Decrease the learning rate exponentially, making smaller adjustments as training progresses.</li>
+</ul>
+<h3 id="adaptive-learning-rates">Adaptive Learning Rates:</h3>
+<ul>
+<li><strong>Adagrad</strong>: Adjust the learning rate for each parameter based on the past gradients. It gives frequently occurring features very low learning rates and infrequent features high learning rates.</li>
+<li><strong>RMSprop</strong>: Similar to Adagrad but addresses its aggressive, monotonically decreasing learning rate by using a moving average of squared gradients.</li>
+<li><strong>Adam</strong> (Adaptive Moment Estimation): Combines ideas from RMSprop and momentum by keeping an exponentially decaying average of past gradients and squared gradients.</li>
+</ul>
+<h2 id="pytorch">Pytorch</h2>
+<p>Core PyTorch functionality revolves around its primary features:</p>
+<p>Tensors: PyTorch's fundamental data structure, similar to NumPy arrays, but with GPU support for faster computation.</p>
+<p>Autograd Module: Enables automatic differentiation for all operations on Tensors. It's a critical component for training neural networks.</p>
+<p>Neural Networks Module (torch.nn): Provides the building blocks for neural networks like layers, cost functions, etc.</p>
+<p>Optimizers (torch.optim): Contains algorithms like SGD, Adam, etc., for optimizing neural network parameters during training.</p>
+<p>Utilities for Datasets and Dataloaders: Streamline data preprocessing, augmentation, and iteration during training/testing.</p>
+<p>GPU Acceleration: Seamless switching between CPU and GPU to accelerate computations.</p>
+<h2 id="types">Types</h2>
+<ul>
+<li><strong>FNNs</strong> are the simplest, used for straightforward tasks.</li>
+<li><strong>CNNs</strong> excel in processing data with spatial relationships (images).</li>
+<li><strong>RNNs and LSTMs</strong> are suited for sequential data, with LSTMs being an enhancement over RNNs to capture longer dependencies.</li>
+</ul>
+<h3 id="feedforward-neural-networks-fnns">Feedforward Neural Networks (FNNs):</h3>
+<ul>
+<li><strong>Structure</strong>: Comprises input, hidden, and output layers. Signals travel in one direction from input to output.</li>
+<li><strong>Use Cases</strong>: Basic tasks like image recognition (when complexity is low) and classification problems.</li>
+<li><strong>Characteristics</strong>: No internal state is maintained, making it less suitable for tasks where context or sequence is important.</li>
+</ul>
+<h3 id="convolutional-neural-networks-cnns">Convolutional Neural Networks (CNNs):</h3>
+<ul>
+<li><strong>Structure</strong>: Consists of convolutional layers, pooling layers, and fully connected layers. Designed to process data in a grid pattern (like images).</li>
+<li><strong>Use Cases</strong>: Image and video recognition, image classification, and any task that requires capturing spatial hierarchies.</li>
+<li><strong>Characteristics</strong>: Excellent at capturing spatial relationships in data. Uses parameter sharing and sparsity of connections to be more efficient in terms of computation and parameters.</li>
+</ul>
+<h3 id="recurrent-neural-networks-rnns">Recurrent Neural Networks (RNNs):</h3>
+<ul>
+<li><strong>Structure</strong>: Nodes form a directed graph along a temporal sequence, allowing it to exhibit temporal dynamic behavior.</li>
+<li><strong>Use Cases</strong>: Time series prediction, natural language processing, and any task that involves sequential data.</li>
+<li><strong>Characteristics</strong>: Can process sequences of data, maintaining an internal state from previous inputs to influence current inputs. Challenges include difficulty in training (vanishing and exploding gradient problems).</li>
+</ul>
+<h3 id="long-short-term-memory-networks-lstms">Long Short-Term Memory Networks (LSTMs):</h3>
+<ul>
+<li><strong>Structure</strong>: A special kind of RNN, capable of learning long-term dependencies, using gates (input, forget, and output gates).</li>
+<li><strong>Use Cases</strong>: Language modeling, speech recognition, and complex sequence prediction problems where context from long sequences is crucial.</li>
+<li><strong>Characteristics</strong>: Addresses vanishing gradient problem of RNNs by incorporating a memory cell that can maintain information in memory for long periods. More complex and computationally expensive than standard RNNs.</li>
+</ul>
+<h1 id="nlp">NLP</h1>
+<p>Traditional NLP methods heavily relied on statistical techniques and linguistic rules. Approaches like Bag of Words, TF-IDF, and n-grams would convert text into a numerical format that machine learning models could understand, essentially treating text as a collection of independent tokens or phrases.</p>
+<p>Neural networks introduced a significant shift in NLP with the ability to understand and represent the context of words in a sentence, moving beyond the limitations of traditional models. Here's how neural networks are integrated into NLP:</p>
+<ul>
+<li><strong>Word Embeddings</strong> (e.g., Word2Vec, GloVe): Instead of treating words as separate entities, word embeddings represent them in a continuous vector space, capturing semantic similarity based on context. Words with similar meanings are placed closer together in this space.</li>
+<li><strong>Recurrent Neural Networks (RNNs) and Long Short-Term Memory (LSTM) networks</strong>: These architectures are designed to handle sequences of data, like sentences. They can remember information for a long period, which is essential for understanding context and meaning in text.</li>
+<li><strong>Attention Mechanisms and Transformers</strong>: Attention mechanisms allow models to focus on different parts of the input sequence when producing an output, improving the model's ability to understand context and relationships in the text. Transformers, introduced in the paper &quot;Attention is All You Need,&quot; use self-attention mechanisms to process input data in parallel and capture complex word dependencies.</li>
+<li><strong>Pre-trained Language Models</strong> (e.g., BERT, GPT): These models are trained on vast amounts of text and then fine-tuned for specific tasks. They can understand context, nuance, and even generate human-like text.</li>
+</ul>
+<h2 id="embeddings">Embeddings</h2>
+<p>When you handle multiple words or an entire sentence, you stack these vectors, and they form a matrix. Here's how it works step by step:</p>
+<ul>
+<li><strong>Individual Word Embeddings</strong>: Suppose you have a vocabulary of 10,000 words and you choose to represent each word with a 300-dimensional vector. Each word is then associated with a unique 300-number-long vector.</li>
+<li><strong>Sentence or Document Representation</strong>: When you want to represent a sentence or a document, you take each word's embedding and stack them. For instance, a sentence with 10 words, each represented by a 300-dimensional vector, will result in a 10x300 matrix.</li>
+</ul>
+<p>This matrix serves as the input to further neural network layers. In this matrix:</p>
+<ul>
+<li>Each row corresponds to a word in the sentence.</li>
+<li>Each column in a row corresponds to a dimension in the word's embedding.</li>
+</ul>
+<h1 id="transformers">Transformers</h1>
+<p>In the paper &quot;Attention is All You Need&quot; and in Large Language Models (LLMs) like GPT or BERT, the importance of different parts of the input data is determined dynamically for each task or context through the mechanism of attention, specifically self-attention in transformers.</p>
+<p>The core innovation of the Transformer is the self-attention mechanism, which allows the model to weigh the influence of different parts of the input data when processing each word.</p>
+<p>Here's how it works:</p>
+<p><img src="transformers.png" alt="Getting Started"></p>
+<ul>
+<li>
+<p><strong>Self-Attention Mechanism</strong>:</p>
+<ul>
+<li>The core idea of the self-attention mechanism is to allow each position in the input sequence to attend to all positions in the same sequence to compute a representation of the sequence. It does this by calculating three vectors for each input token: a query vector, a key vector, and a value vector.</li>
+<li>The attention mechanism then computes a score by taking the dot product of the query vector with the key vector of every other token. These scores determine how much focus to put on other parts of the input sequence when encoding a particular token.</li>
+</ul>
+</li>
+<li>
+<p><strong>Positional Encodings</strong>:</p>
+<ul>
+<li>Since Transformers process the input tokens in parallel, they don't inherently capture the sequential order of the tokens. Positional encodings are added to the input embeddings to provide this sequence information, allowing the model to consider the position of each token when processing the text.</li>
+</ul>
+</li>
+<li>
+<p><strong>Layer Structure</strong>:</p>
+<ul>
+<li>A Transformer model is composed of an encoder and a decoder, each consisting of multiple layers. Each layer in the encoder and decoder contains a self-attention mechanism and a feedforward neural network. In the encoder, layers process the input sequence, capturing the context and relationships. In the decoder, layers generate the output sequence, one token at a time, conditioned on the input sequence and the previously generated tokens.</li>
+</ul>
+</li>
+<li>
+<p><strong>Determining Importance</strong>:</p>
+<ul>
+<li>The scores obtained from the dot product are passed through a softmax function, which converts them into probabilities. The softmax output indicates the importance of each token relative to the other tokens in the sequence.</li>
+<li>The model then takes a weighted sum of the value vectors, where the weights are determined by the softmax output. This process allows the model to aggregate information from the entire sequence, with more important or relevant tokens getting higher weights.</li>
+</ul>
+</li>
+<li>
+<p><strong>Parallel Processing</strong> :</p>
+<ul>
+<li>Unlike RNNs that process data sequentially, Transformers process all tokens in the input simultaneously. This allows for more efficient training and better scalability with longer sequences.</li>
+</ul>
+</li>
+</ul>
+<p><strong>In LLMs</strong>:
+In the context of Large Language Models like GPT, BERT, or T5, this attention mechanism allows the model to consider the entire context of a sequence when making predictions or generating text. For example:</p>
+<ul>
+<li><strong>In Translation Tasks</strong>: The model can focus on subject-verb agreement, adjective-noun pairing, or contextual cues that are crucial for accurate translation.</li>
+<li><strong>In Text Generation</strong>: The model can generate coherent and contextually relevant text by focusing on relevant parts of the input prompt or previous tokens in the sequence.</li>
+<li><strong>In Understanding Tasks (like Q&amp;A)</strong>: The model can focus on the parts of the context or the question that are most relevant to generating a correct and precise answer.</li>
+</ul>
+<p>The beauty of the self-attention mechanism is its flexibility and dynamic nature. It does not rely on hardcoded rules to determine relevance or importance but learns these patterns from the data. As the model is trained on a task, it learns to pay more attention to the input parts that are more informative for that task. This allows transformers to be highly effective across a wide range of applications and to handle complex dependencies and relationships in the data.</p>
+<h1 id="llms">LLMs</h1>
+<p>In Large Language Models (LLMs) the process of understanding and generating text involves several layers of computation, with each layer designed to capture different aspects of language understanding and generation. Here's a simplified overview of the steps involved when a user's input (question) is processed by an LLM:</p>
+<ul>
+<li>
+<p><strong>Tokenization and Embedding</strong>:</p>
+<ul>
+<li><strong>Tokenization</strong>: The input text (user's question) is broken down into tokens. These tokens could be words, parts of words, or even characters, depending on the model's design.</li>
+<li><strong>Embedding</strong>: Each token is then converted into a numerical vector using word embeddings. This results in a matrix where each row represents a token in the input.</li>
+</ul>
+</li>
+<li>
+<p><strong>Positional Encoding (specific to models like Transformers)</strong>:</p>
+<ul>
+<li>To retain the order of words, positional encodings are added to the embeddings. This ensures that the model not only understands the individual words but also the sequence or order in which they appear.</li>
+</ul>
+</li>
+<li>
+<p><strong>Passing through Neural Network Layers</strong>:</p>
+<ul>
+<li>The matrix (embeddings + positional encodings) is passed through multiple layers of the neural network. In models like Transformers, these layers are primarily composed of self-attention mechanisms and feedforward neural networks:
+<ul>
+<li>Self-Attention: This mechanism allows the model to weigh the importance of other words in the input for understanding each specific word. It essentially helps the model to gather context from the entire input.</li>
+<li>Feedforward Neural Networks: These layers process the output from the attention mechanisms further, capturing more complex patterns and relationships in the data.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Output Generation</strong>:</p>
+<ul>
+<li>For each input token, the final layer of the model produces a vector.</li>
+<li>This vector is then projected onto the vocabulary space (using a linear layer followed by a softmax function), turning it into a probability distribution over all possible next words (in case of generative models like GPT) or over possible labels or classes (like in classification tasks for models like BERT).</li>
+<li>For generative models, this process is repeated iteratively, with each step generating a new token until a stop condition is met (like an end-of-sequence token is generated).</li>
+</ul>
+</li>
+<li>
+<p><strong>Fine-tuning for Specific Tasks</strong> (optional):</p>
+<ul>
+<li>While the core model is trained on a large corpus of text to understand language in general, it can be fine-tuned on specific tasks or datasets. This involves additional training steps where the model's parameters are slightly adjusted to perform well on a specific type of input or to better understand the context of certain domains.</li>
+</ul>
+</li>
+</ul>
+<p>In summary, LLMs transform user input into vectors, process these through complex layers capturing various linguistic features and relationships, and finally output a response or classification by converting the complex internal representations back into human-understandable language or decision labels.</p>
+<p><img src="llms.png" alt="LLMs"></p>
+<h2 id="foundation-models-and-chats">Foundation Models and chats</h2>
+<ul>
+<li>
+<p>Bare GPT Models:</p>
+<ul>
+<li>These are the foundational models trained to predict the next word in a sequence of text, learning to generate coherent and contextually relevant text.</li>
+<li>The bare model's primary function is text generation, and it can be used for tasks like text completion, creative writing, and more.</li>
+<li>The model is autoregressive, generating text one word at a time, based on the sequence of words that came before it.</li>
+</ul>
+</li>
+<li>
+<p>Chat Models or Conversational Agents:</p>
+<ul>
+<li>These are specialized versions of GPT models that are fine-tuned or further trained to handle conversational text. They are designed to engage in dialogue, providing responses that are contextually appropriate and coherent.</li>
+<li>These models may have additional layers or mechanisms to handle the nuances of conversation, such as maintaining context over several turns of dialogue, managing coherency over longer conversations, and sometimes even personalization or style adjustments to match the tone or context of the conversation.</li>
+<li>They are often fine-tuned on conversational datasets or optimized to generate responses that are not just contextually relevant but also engaging, informative, and appropriate for the conversational setting.</li>
+</ul>
+</li>
+</ul>
+<h1 id="model-optimization">MODEL OPTIMIZATION</h1>
+<ul>
+<li><strong>Fine tuning</strong></li>
+<li><strong>Prompt engineering</strong></li>
+<li><strong>Few shots learning</strong> (for classification)</li>
+<li><strong>Model distillation</strong></li>
+</ul>
+<h1 id="fine-tuning">Fine tuning</h1>
+<p>training new model parameters (weights, no. of layers, training rate, add regularization, tweaking optimizer)</p>
+<p><a href="https://www.youtube.com/watch?v=eC6Hd1hFvos">Fine-tuning Large Language Models (LLMs) | w/ Example Code</a></p>
+<p>basically QLORA (co to QLORA ?!?!?!)</p>
+<p>task: to get completions, summarizations, chats, classification</p>
+<h2 id="3-ways-to-finetune">3 ways to finetune:</h2>
+<ul>
+<li>self supervised: new corpus / knowledge injection</li>
+<li>supervised: input / output -&gt; here you use prompt templates (e.g. please answer the following question...)</li>
+<li>reinforcement learning (RL)
+<ul>
+<li>supervised ft</li>
+<li>train reward model (one prompt, multiple answers, ranking, train reward model)</li>
+<li>reinforcement learning with RL algorithm</li>
+</ul>
+</li>
+</ul>
+<h2 id="supervised-fine-tuning--5-steps">Supervised Fine-tuning / 5 steps:</h2>
+<ul>
+<li>choose finetuning task</li>
+<li>prepare training dataset</li>
+<li>choose base model</li>
+<li>fine tune model via supervised learning</li>
+<li>evaluate model performance</li>
+</ul>
+<h2 id="3-options-for-parameter-training">3 Options for parameter training</h2>
+<ul>
+<li>retrain all parameters</li>
+<li>transfer learning: finetuning only last layer</li>
+<li>parameter efficient fine tuning: freezing all weights, only adding new weights
+<ul>
+<li>LORA: dodajesz nową macierz wag, ale pod postacią 2 wektorów, które się mnożą)</li>
+</ul>
+</li>
+</ul>
+<h2 id="how-to-create-synthetic-dataset">How to create synthetic dataset:</h2>
+<p>Take company docs</p>
+<ul>
+<li>Chunk it</li>
+<li>Ask ollama to create questions based on chunks</li>
+<li>Ask ollama to answer the said questions based on chunks (done seperately to ensure verbose answer)</li>
+<li>Any embedding model to verify if the answer is def related to the chunk</li>
+<li>Maybe some keyword matches</li>
+<li>Pending step to remove further hallucinations (ask GPT-4/Mistral-medium to rate it from 1 to 5??)</li>
+<li>A decent dataset acquired</li>
+</ul>
+<h1 id="rags">RAGS</h1>
+<h1 id="frameworks">FRAMEWORKS</h1>
+<ul>
+<li>
+<p>Langchains - robi chainy dzialan</p>
+</li>
+<li>
+<p>LlamaIndex</p>
+</li>
+<li>
+<p>Autogen</p>
+</li>
+<li>
+<p>Ollama - do sciagania modeli lokalnie (Linux)</p>
+</li>
+</ul>
+<h1 id="cloud">CLOUD</h1>
+<ul>
+<li>Azure: port OpenAI, finetuning gpt-35-turbo-0613, prosty interface do finetuningu <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/overview">LINK</a></li>
+<li>GCP: Kubeflow - the machine learning toolkit for Kubernetes.</li>
+<li>GCP: https://cloud.google.com/tpu</li>
+<li>GCP: Vertex</li>
+</ul>
+<h1 id="multiagents">MULTIAGENTS</h1>
+<p><a href="multiagents.png">schema</a></p>
+<h1 id="trends">TRENDS</h1>
+<ul>
+<li>Mistral 7B i Gemini Pro</li>
+<li>On Huggingface CodeLLama, Instruct i Mixtral 8x7B,,,,, LLama2, phi-2</li>
+<li>multiagent</li>
+</ul>
+<p>Jakie open sourcowe modele na Hugging Face wspierają Lorę?
+Jakie są teraz trenndy w Finetuning
+Czy w modelach na Hugging Face mozna wydobyc layers for particular tasks?
+https://cloud.google.com/tpu/docs/tutorials/transformer-2.x</p>
+
+</body>
+</html>
