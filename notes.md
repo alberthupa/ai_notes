@@ -304,6 +304,7 @@ Jest jeszcze [Chain of abstractions:](https://huggingface.co/papers/2401.17464):
 # MULTIAGENTS
 ![schema](gfx/multiagents.png)
 - Autogen
+- https://crewai.net/
 
 
 
