@@ -56,20 +56,20 @@ Random Initialization: Weights are usually initialized randomly. This breaks the
 - **Adam** (Adaptive Moment Estimation): Combines ideas from RMSprop and momentum by keeping an exponentially decaying average of past gradients and squared gradients.
 
 
-## Pytorch
-Core PyTorch functionality revolves around its primary features:
+## Pytorch vs Keras
+- [https://www.youtube.com/watch?v=YZ6q1_kL51k] !!!!!!!
+- Keras is for deployment and kubernetes
+- pro jest robienie w pytorch i deploy w keras przez onnx
+- sprawdz ich modele i dane!!!!
 
-Tensors: PyTorch's fundamental data structure, similar to NumPy arrays, but with GPU support for faster computation.
-
-Autograd Module: Enables automatic differentiation for all operations on Tensors. It's a critical component for training neural networks.
-
-Neural Networks Module (torch.nn): Provides the building blocks for neural networks like layers, cost functions, etc.
-
-Optimizers (torch.optim): Contains algorithms like SGD, Adam, etc., for optimizing neural network parameters during training.
-
-Utilities for Datasets and Dataloaders: Streamline data preprocessing, augmentation, and iteration during training/testing.
-
-GPU Acceleration: Seamless switching between CPU and GPU to accelerate computations.
+### Pytorch
+- Core PyTorch functionality revolves around its primary features:
+- Tensors: PyTorch's fundamental data structure, similar to NumPy arrays, but with GPU support for faster computation.
+- Autograd Module: Enables automatic differentiation for all operations on Tensors. It's a critical component for training neural networks.
+- Neural Networks Module (torch.nn): Provides the building blocks for neural networks like layers, cost functions, etc.
+- Optimizers (torch.optim): Contains algorithms like SGD, Adam, etc., for optimizing neural network parameters during training.
+- Utilities for Datasets and Dataloaders: Streamline data preprocessing, augmentation, and iteration during training/testing.
+- GPU Acceleration: Seamless switching between CPU and GPU to accelerate computations.
 
 
 ## Types

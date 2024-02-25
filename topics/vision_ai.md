@@ -93,3 +93,15 @@ Synthetic data generation involves creating artificial images or videos that mim
 - **Generative Adversarial Networks (GANs**: GANs can generate highly realistic images by learning the distribution of a dataset. They are particularly useful for augmenting datasets with rare but critical cases, such as medical imaging datasets with rare diseases.
 - **Data Augmentation Techniques**: While not generating completely new data, augmentation techniques such as flipping, rotation, scaling, and color variation can create variations of existing data, effectively increasing the size and diversity of a dataset.
 - **Simulation Environments**: Simulated environments, often used in robotics and autonomous vehicles, can generate vast amounts of synthetic data. These environments simulate real-world physics and interactions, providing a rich source of diverse data.
+
+
+
+
+
+# IMAGE RECOGINTION:
+- ZASTOSOWANIE IMAGE TRANSFORMERS WYDAJE SIE BYC MEGA: [https://paperswithcode.com/sota/image-classification-on-cifar-10] & [https://paperswithcode.com/paper/an-image-is-worth-16x16-words-transformers-1]
+- (Vision Transformer - Pytorch)[https://github.com/lucidrains/vit-pytorch]
+
+
+# TorchVision
+Sprawdz!!!
