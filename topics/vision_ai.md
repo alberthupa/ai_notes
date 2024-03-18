@@ -111,4 +111,10 @@ Synthetic data generation involves creating artificial images or videos that mim
 The most powerful and modular stable diffusion GUI and backend.
 
 # TorchVision
-Sprawdz!!!
+- https://github.com/pytorch/vision (zakladka models)
+- https://github.com/huggingface/pytorch-image-models (PyTorch Image Models)
+
+
+# Roboflow 
+- reusable computer vision tools. Whether you need to load your dataset from your hard drive, draw detections on an image or video, or count how many detections are in a zone
+- https://github.com/roboflow/supervision
