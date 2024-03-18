@@ -103,5 +103,12 @@ Synthetic data generation involves creating artificial images or videos that mim
 - (Vision Transformer - Pytorch)[https://github.com/lucidrains/vit-pytorch]
 
 
+# Stable diffusion UI
+- https://github.com/comfyanonymous/ComfyUI
+- https://civitai.com/ community
+
+
+The most powerful and modular stable diffusion GUI and backend.
+
 # TorchVision
 Sprawdz!!!
