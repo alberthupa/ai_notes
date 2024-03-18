@@ -112,7 +112,7 @@ The most powerful and modular stable diffusion GUI and backend.
 
 # TorchVision
 - https://github.com/pytorch/vision (zakladka models)
-- https://github.com/huggingface/pytorch-image-models (PyTorch Image Models)
+- https://github.com/huggingface/pytorch-image-models (timm, also known as pytorch-image-models, is an open-source collection of state-of-the-art PyTorch image models, pretrained weights, and utility scripts for training, inference, and validation. PyTorch Image Models)
 
 
 # Roboflow 
