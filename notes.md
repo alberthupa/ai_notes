@@ -336,3 +336,5 @@ https://cloud.google.com/tpu/docs/tutorials/transformer-2.x
 
 
 
+# NVIDIA
+![ai_reasoning](gfx/nvidia.png)
