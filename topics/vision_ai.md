@@ -21,6 +21,10 @@
 - **Custom AI Models**: While pre-trained models offer a great starting point, there's a trend towards custom AI models tailored to specific business needs and data. Consultancies are helping companies develop these custom models to maximize performance and relevance to their unique challenges.
 
 
+# training models
+- Classy Vision (https://classyvision.ai/): now open-source framework training and fine tuning your own image and video classification
+models | An end-to-end framework for image and video classification, Open source, modular API for computer vision research 
+Meta, Facebook, Pytorch/
 
 
 
@@ -104,6 +108,8 @@ Synthetic data generation involves creating artificial images or videos that mim
 
 
 # Stable diffusion UI
+- https://stability.ai/
+- https://platform.stability.ai/
 - https://github.com/comfyanonymous/ComfyUI
 - https://civitai.com/ community
 
