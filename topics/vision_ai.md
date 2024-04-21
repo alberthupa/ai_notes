@@ -124,3 +124,9 @@ The most powerful and modular stable diffusion GUI and backend.
 # Roboflow 
 - reusable computer vision tools. Whether you need to load your dataset from your hard drive, draw detections on an image or video, or count how many detections are in a zone
 - https://github.com/roboflow/supervision
+
+
+
+# Image + text to video
+- Vasa-1: https://twitter.com/duborges/status/1780761886851502242?t=4AeMPvwAi8aPtPI0me9ACg&s=03
+- Google's Vlogger: https://twitter.com/hey_madni/status/1780565383277359214

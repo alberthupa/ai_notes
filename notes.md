@@ -44,6 +44,8 @@ Random Initialization: Weights are usually initialized randomly. This breaks the
 
 ## learning rate optimization
 
+- Andrej Karpathy A Recipe for Training Neural Networks: https://karpathy.github.io/2019/04/25/recipe/
+
 ### Learning Rate Schedules:
 - **Stochastic gradient descent**: learning in batches
 - **Time-based decay**: Gradually reduce the learning rate over time. For example, you might decrease the learning rate by a factor every few epochs.
@@ -338,3 +340,5 @@ https://cloud.google.com/tpu/docs/tutorials/transformer-2.x
 
 # NVIDIA
 ![ai_reasoning](gfx/nvidia.png)
+- https://www.cnbc.com/2024/03/18/nvidia-announces-gb200-blackwell-ai-chip-launching-later-this-year.html
+- https://news.ycombinator.com/item?id=39749646
