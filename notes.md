@@ -296,7 +296,7 @@ Jest jeszcze [Chain of abstractions:](https://huggingface.co/papers/2401.17464):
 # FRAMEWORKS
 - **Langchains** robi chainy dzialan, Build context-aware, reasoning applications
 - **LlamaIndex:** architektura do ragów (applications to ingest, structure, and access private or domain-specific data) + embeddings + routing + FT -> dziala z ollama
-
+- Prompt Flow, Langchain, Semantic Kernel, AutoGen
 
 
 
