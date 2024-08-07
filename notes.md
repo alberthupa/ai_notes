@@ -139,6 +139,7 @@ Here's how it works:
 
 ![Getting Started](gfx/transformers.png)
 
+[More detailed architecture for LLama3 and Mistral](https://levelup.gitconnected.com/building-llama-3-from-scratch-with-python-e0cf4dbbc306)
 
 - **Self-Attention Mechanism**:
     - The core idea of the self-attention mechanism is to allow each position in the input sequence to attend to all positions in the same sequence to compute a representation of the sequence. It does this by calculating three vectors for each input token: a query vector, a key vector, and a value vector.
