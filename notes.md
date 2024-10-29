@@ -139,6 +139,8 @@ Here's how it works:
 
 ![Getting Started](gfx/transformers.png)
 
+![TRANSFORMER EXPLAINER](https://poloclub.github.io/transformer-explainer/)
+
 [More detailed architecture for LLama3 and Mistral](https://levelup.gitconnected.com/building-llama-3-from-scratch-with-python-e0cf4dbbc306)
 
 - **Self-Attention Mechanism**:
