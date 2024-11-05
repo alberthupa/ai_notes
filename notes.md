@@ -206,6 +206,9 @@ In summary, LLMs transform user input into vectors, process these through comple
 ![LLMs](gfx/llms.png)
 
 
+https://github.com/SylphAI-Inc/LLM-engineer-handbook#serving
+A curated list of Large Language Model resources, covering model training, serving, fine-tuning, and building LLM applications.
+
 
 ## Foundation Models and chats
 
