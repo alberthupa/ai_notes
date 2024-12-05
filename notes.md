@@ -145,7 +145,7 @@ Here's how it works:
 
 - **Self-Attention Mechanism**:
     - The core idea of the self-attention mechanism is to allow each position in the input sequence to attend to all positions in the same sequence to compute a representation of the sequence. It does this by calculating three vectors for each input token: a query vector, a key vector, and a value vector.
-    - The attention mechanism then computes a score by taking the dot product of the query vector with the key vector of every other token. These scores determine how much focus to put on other parts of the input sequence when encoding a particular token.
+    - The attention mechanism then computes a score by taking the dot product of the query vector with the key vector of every other token. These scores determine how much focus to put on other parts of the input sequence when encoding a particular token. https://twitter.com/karpathy/status/1864023344435380613/photo/1
 
 - **Positional Encodings**:
     - Since Transformers process the input tokens in parallel, they don't inherently capture the sequential order of the tokens. Positional encodings are added to the input embeddings to provide this sequence information, allowing the model to consider the position of each token when processing the text.    
