@@ -127,7 +127,13 @@ This matrix serves as the input to further neural network layers. In this matrix
 - Each row corresponds to a word in the sentence.
 - Each column in a row corresponds to a dimension in the word's embedding.
 
+# Attention
+## Self attention mechanism
+- The core idea of the self-attention mechanism is to allow each position in the input sequence to attend to all positions in the same sequence to compute a representation of the sequence. It does this by calculating three vectors for each input token: a query vector, a key vector, and a value vector.
+- The attention mechanism then computes a score by taking the dot product of the query vector with the key vector of every other token. These scores determine how much focus to put on other parts of the input sequence when encoding a particular token. https://twitter.com/karpathy/status/1864023344435380613/photo/1
 
+
+- Nvidia: Star attention (https://www.marktechpost.com/2024/11/28/nvidia-ai-research-unveils-star-attention-a-novel-ai-algorithm-for-efficient-llm-long-context-inference/?ref=dailydev)
 
 # Transformers
 
@@ -143,9 +149,8 @@ Here's how it works:
 
 [More detailed architecture for LLama3 and Mistral](https://levelup.gitconnected.com/building-llama-3-from-scratch-with-python-e0cf4dbbc306)
 
-- **Self-Attention Mechanism**:
-    - The core idea of the self-attention mechanism is to allow each position in the input sequence to attend to all positions in the same sequence to compute a representation of the sequence. It does this by calculating three vectors for each input token: a query vector, a key vector, and a value vector.
-    - The attention mechanism then computes a score by taking the dot product of the query vector with the key vector of every other token. These scores determine how much focus to put on other parts of the input sequence when encoding a particular token. https://twitter.com/karpathy/status/1864023344435380613/photo/1
+- **Self-Attention Mechanism**.   
+
 
 - **Positional Encodings**:
     - Since Transformers process the input tokens in parallel, they don't inherently capture the sequential order of the tokens. Positional encodings are added to the input embeddings to provide this sequence information, allowing the model to consider the position of each token when processing the text.    
