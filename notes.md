@@ -133,7 +133,7 @@ This matrix serves as the input to further neural network layers. In this matrix
 - The attention mechanism then computes a score by taking the dot product of the query vector with the key vector of every other token. These scores determine how much focus to put on other parts of the input sequence when encoding a particular token. https://twitter.com/karpathy/status/1864023344435380613/photo/1
 
 
-- Nvidia: Star attention (https://www.marktechpost.com/2024/11/28/nvidia-ai-research-unveils-star-attention-a-novel-ai-algorithm-for-efficient-llm-long-context-inference/?ref=dailydev)
+Nvidia: Star attention (https://www.marktechpost.com/2024/11/28/nvidia-ai-research-unveils-star-attention-a-novel-ai-algorithm-for-efficient-llm-long-context-inference/?ref=dailydev)
 
 # Transformers
 
