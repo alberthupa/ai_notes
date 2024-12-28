@@ -228,7 +228,9 @@ A curated list of Large Language Model resources, covering model training, servi
     - They are often fine-tuned on conversational datasets or optimized to generate responses that are not just contextually relevant but also engaging, informative, and appropriate for the conversational setting.
 
 
-
+# mixture of experts
+https://huggingface.co/blog/moe
+[https://huggingface.co/blog/moe](https://huggingface.co/blog/moe)
 
 
 
