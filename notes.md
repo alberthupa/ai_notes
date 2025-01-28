@@ -146,7 +146,7 @@ Here's how it works:
 ![Getting Started](gfx/transformers.png)
 https://x.com/Hesamation/status/1875306553286471871?t=1VfK6-_r178iQPuxzSY2dg&s=19
 [TRANSFORMER EXPLAINER](https://poloclub.github.io/transformer-explainer/)
-
+[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 [More detailed architecture for LLama3 and Mistral](https://levelup.gitconnected.com/building-llama-3-from-scratch-with-python-e0cf4dbbc306)
 
 - **Self-Attention Mechanism**.   
