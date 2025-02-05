@@ -149,6 +149,10 @@ https://x.com/Hesamation/status/1875306553286471871?t=1VfK6-_r178iQPuxzSY2dg&s=1
 [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 [More detailed architecture for LLama3 and Mistral](https://levelup.gitconnected.com/building-llama-3-from-scratch-with-python-e0cf4dbbc306)
 
+https://youtu.be/e9-0BxyKG10?si=I0uN8FO_F7E71-2P
+
+
+
 - **Self-Attention Mechanism**.   
 
 
