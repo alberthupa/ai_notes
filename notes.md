@@ -151,6 +151,7 @@ https://x.com/Hesamation/status/1875306553286471871?t=1VfK6-_r178iQPuxzSY2dg&s=1
 
 https://youtu.be/e9-0BxyKG10?si=I0uN8FO_F7E71-2P
 
+https://youtu.be/7xTGNNLPyMI?si=YbZSrzVlvmVmVjF7
 
 
 - **Self-Attention Mechanism**.   
